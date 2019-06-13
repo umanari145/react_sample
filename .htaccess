@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #この条件をつけないと永久ループ
+    RewriteCond %{REQUEST_URI} !/dest
+    #.をつけないと相対パスにならない
+    #RewriteRule ^(.*)$ http://localhost/react_sample/dest/$1はURL書き換えが起こる
+    RewriteRule ^(.*)$ ./dest/$1
+</IfModule>
