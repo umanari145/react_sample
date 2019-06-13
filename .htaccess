@@ -2,7 +2,7 @@
     RewriteEngine On
     #この条件をつけないと永久ループ
     RewriteCond %{REQUEST_URI} !/dest
-    #.をつけないと相対パスにならない
     #RewriteRule ^(.*)$ http://localhost/react_sample/dest/$1はURL書き換えが起こる
-    RewriteRule ^(.*)$ ./dest/$1
+    #.をつけないと相対パスにならない ./ or /自体書かない
+    RewriteRule ^(.*)$ dest/$1
 </IfModule>
